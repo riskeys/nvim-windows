@@ -1,5 +1,9 @@
 {
   "plugins": {
+    "beside.nvim": {
+      "rev": "ce2f889718f13b22eb8cdeb6738a74f7bbea06a4",
+      "src": "https://github.com/mariocesar/beside.nvim"
+    },
     "blink.cmp": {
       "rev": "49d39fda6350d7f789d1da1053e86c9e256f8108",
       "src": "https://github.com/saghen/blink.cmp"
@@ -32,6 +36,10 @@
     "gitsigns.nvim": {
       "rev": "5be654f2232c10ddcad19c1607a67b6b4b78fc29",
       "src": "https://github.com/lewis6991/gitsigns.nvim"
+    },
+    "godoc.nvim": {
+      "rev": "54a7c3b14f6391a299b94db7c18d3a9ee1e31bde",
+      "src": "https://github.com/fredrikaverpil/godoc.nvim"
     },
     "markview.nvim": {
       "rev": "5d9fc2aa6dd1c2fbdc7a68bc79b300e9967b21ff",
@@ -74,8 +82,9 @@
       "src": "https://github.com/nvim-lua/plenary.nvim"
     },
     "sqlserver.nvim": {
-      "rev": "d1795d7ebff9b32d91004fba467a714d50989c45",
-      "src": "https://github.com/NicholasMata/sqlserver.nvim"
+      "rev": "03bcc2b10144cff904f82aaf46d9401899440a3a",
+      "src": "https://github.com/NicholasMata/sqlserver.nvim",
+      "version": "'next'"
     },
     "vim-dadbod": {
       "rev": "6d1d41da4873a445c5605f2005ad2c68c99d8770",

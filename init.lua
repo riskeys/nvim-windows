@@ -1,5 +1,3 @@
-print("init.lua")
-
 require("options")
 local functions = require("functions")
 local gh = functions.gh
@@ -19,14 +17,19 @@ vim.pack.add({
     gh("ibhagwan/fzf-lua"),
     gh("nvim-tree/nvim-tree.lua"),
     gh("tpope/vim-dadbod"),
+    gh("fredrikaverpil/godoc.nvim"),
     gh("kristijanhusak/vim-dadbod-ui"),
     gh("kristijanhusak/vim-dadbod-completion"),
     gh("lewis6991/gitsigns.nvim"),
+    gh("mariocesar/beside.nvim"),
     gh("folke/which-key.nvim"),
     gh("riskeys/discipline.nvim"),
     gh("nvim-mini/mini.test"),
-    gh("NicholasMata/sqlserver.nvim"),
 })
+vim.pack.add({ {
+    src = gh("NicholasMata/sqlserver.nvim"),
+    version = "next"
+} })
 vim.pack.add({ gh("saghen/blink.lib"), gh("saghen/blink.cmp") })
 vim.pack.add({ {
     src = "https://www.github.com/olimorris/codecompanion.nvim",
@@ -41,6 +44,9 @@ require("search")
 require("artifi")
 require("autoformat")
 require("git")
+require("beside").setup()
+require("godoc")
+
 require("sqlserver").setup({
     keymap_prefix = "<leader>d",
     results = {
@@ -122,18 +128,18 @@ vim.api.nvim_create_autocmd({ "BufEnter", "InsertLeave" }, {
                 end
             end
 
-            local comment = line:match("%s*//")
-            if comment then
-                if vim.o.ft == "javascript" or vim.o.ft == "typescript" or vim.o.ft == "text" then
-                    vim.api.nvim_buf_set_extmark(buf, ns, line_num - 1, 0, {
-                        line_hl_group = "CCComment",
-                        virt_text = { { "Comment detected", "CCComment" } },
-                        virt_text_pos = "eol",
-                        -- virt_lines = { { { "", "Normal" } }, { { "use console.info or delete!", "ConsoleLog" } } },
-                        -- virt_lines_above = true,
-                    })
-                end
-            end
+            -- local comment = line:match("%s*//")
+            -- if comment then
+            --     if vim.o.ft == "javascript" or vim.o.ft == "typescript" or vim.o.ft == "text" then
+            --         vim.api.nvim_buf_set_extmark(buf, ns, line_num - 1, 0, {
+            --             line_hl_group = "CCComment",
+            --             virt_text = { { "Comment detected", "CCComment" } },
+            --             virt_text_pos = "eol",
+            --             -- virt_lines = { { { "", "Normal" } }, { { "use console.info or delete!", "ConsoleLog" } } },
+            --             -- virt_lines_above = true,
+            --         })
+            --     end
+            -- end
         end
     end,
 })

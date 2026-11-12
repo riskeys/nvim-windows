@@ -74,12 +74,14 @@ vim.api.nvim_create_autocmd("LspAttach", {
 
 vim.lsp.enable({
     "jdtls",
-    "ts_ls",
+    "vue_ls",
+    "vtsls",
     "denols",
     "deno",
     "deno_ls",
     "luals",
     "zls",
+    "tailwindcss_ls",
     "fsautocomplete",
     "omnisharp",
 })

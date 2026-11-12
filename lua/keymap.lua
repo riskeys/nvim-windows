@@ -6,6 +6,10 @@ vim.keymap.set("n", "<Leader>cv", function()
     print("dir: nvim")
     vim.cmd("cd $HOME/AppData/Local/nvim")
 end, { desc = "dir: nvim" })
+vim.keymap.set("n", "<Leader>cb", function()
+    print("dir: hackathon project")
+    vim.cmd("cd $HOME/Documents/repos/buildpad-project/id-hackathon-team-3-starter/")
+end, { desc = "dir: nvim" })
 vim.keymap.set("n", "<Leader>crs", function()
     print("dir: rwssc - sitecore custom")
     vim.cmd("cd D:/rws/1/rwsentosa-revamp-sitecore/src/Feature/SitecoreCustomizations/website")
@@ -35,6 +39,9 @@ vim.keymap.set("n", "<leader>fg", "<cmd>FzfLua grep<CR>", { silent = true, desc 
 vim.keymap.set("n", "<leader>fc", "<cmd>FzfLua grep_curbuf<CR>", { silent = true, desc = "FzfLua grep current buffer" })
 vim.keymap.set("n", "<leader>fb", "<cmd>FzfLua buffers<CR>", { silent = true, desc = "FzfLua buffers" })
 vim.keymap.set("n", "<leader>fh", "<cmd>FzfLua help<CR>", { silent = true, desc = "FzfLua help" })
+
+-- beside.nvim
+vim.keymap.set("n", "<leader>mg", "<cmd>Beside glow<CR>", { silent = true, desc = "Beside: glow" })
 
 require("keymap_vimgrep")
 

@@ -1,31 +1,28 @@
 return {
-	cmd = {
-		"typescript-language-server",
-		"--stdio",
-	},
+    cmd = {
+        "typescript-language-server",
+        "--stdio",
+    },
+
     single_file_support = false,
     root_markers = { "package.json", "package.jsonc" },
-	workspace_required = true,
-    -- root_dir = function(bufnr, on_dir)
-    --     -- print(vim.fn.getcwd(0, 0))
-    --     local dirs = vim.fs.find(
-    --     -- { "deno.json", "deno.jsonc" },
-    --         { "package.json", "package.jsonc" },
-    --         { upward = false, path = util.dirname(vim.api.nvim_buf_get_name(bufnr)), stop = cwd }
-    --     )
-    --     for _, dir in ipairs(dirs) do
-    --         if dir then
-    --             -- print(dir)
-    --             on_dir(dir)
-    --             break
-    --         end
-    --     end
-    -- end,
-    init_options = {
-        lint = true,
-        unstable = true,
+    workspace_required = true,
+
+    filetypes = {
+        "javascript",
+        "javascriptreact",
+        "typescript",
+        "typescriptreact",
+        "vue",
     },
-    filetypes = { "typescript", "typescriptreact", "javascript", "javascriptreact" },
+
+    init_options = {
+        plugins = {
+            {
+                name = "@vue/typescript-plugin",
+                location = [[C:\Program Files\nodejs\node_modules\@vue\language-server]],
+                languages = { "javascript", "typescript", "vue" },
+            },
+        },
+    },
 }
-
-

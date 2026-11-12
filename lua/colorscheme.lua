@@ -1,2 +1,2 @@
 vim.cmd("colorscheme catppuccin-nvim")
--- vim.cmd("hi Normal guibg=NONE ctermbg=NONE")
+vim.cmd("hi Normal guibg=NONE ctermbg=NONE")
